@@ -1,22 +1,65 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+		<link
+			rel="icon"
+			href=""
+		/>
+
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<title>ひのとよだ心のクリニック</title>
+		<meta name="description" content="当院は、２０２５年８月にJR中央線豊田駅前に開院予定の精神科・心療内科のクリニックです。これまでの臨床経験や知見をもとに、みなさまの心の困りごとに寄り添い、心の安らぎを得られるよう、お手伝いさせていただきます。" />
+
+		<!-- アイコン -->
+		<link rel="icon" href="/assets/img/favicon.ico"/>
+		<link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
+		<!-- facebookのOGP --> 
+		<meta property="og:url" content="" />
+		<meta property="og:title" content="ひのとよだ心のクリニック" />
+		<meta property="og:type" content="website" />
+		<meta property="og:description" content="当院は、２０２５年８月にJR中央線豊田駅前に開院予定の精神科・心療内科のクリニックです。これまでの臨床経験や知見をもとに、みなさまの心の困りごとに寄り添い、心の安らぎを得られるよう、お手伝いさせていただきます。" />
+		<meta property="og:image" content="/assets/img/ogp.jpg" />
+		<meta property="og:site_name" content="ひのとよだ心のクリニック" />
+		<meta property="og:locale" content="ja_JP" />
+
+		<!-- TwitterのOGP -->
+		<meta name="twitter:description" content="当院は、２０２５年８月にJR中央線豊田駅前に開院予定の精神科・心療内科のクリニックです。これまでの臨床経験や知見をもとに、みなさまの心の困りごとに寄り添い、心の安らぎを得られるよう、お手伝いさせていただきます。" />
+		<meta name="twitter:image:src" content="/assets/img/ogp.jpg" />
+
+
+
+		<!-- Google Fonts -->
+
+
+		<!-- Yakuhan Fonts -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.1/dist/css/yakuhanjp.css"
+		/>
+		<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 	</head>
 	<body>
+
 		<slot />
+
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style lang="scss">
+@use '../style/base/' as *;
 </style>

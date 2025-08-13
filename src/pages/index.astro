@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Main from '../layouts/Main.astro';
+import Mv from '../components/Mv.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="ひのとよだ心のクリニック">
+	<Main>
+		<Mv></Mv>
+	</Main>
 </Layout>
+
+
+<style lang="scss">
+	.bg-footer {
+		.bg-texture {
+			background-image: url(/assets/img/bg_green.webp);
+			z-index: 0;
+		}
+	}
+	.bg-texture {
+		position: relative;
+		background-image: url(/assets/img/bg_repeat.jpg);
+		background-repeat: repeat;
+		z-index: 1;
+	}
+</style>

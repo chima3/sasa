@@ -1,0 +1,57 @@
+@use '../mixin/breakpoint' as *;
+@use '../mixin/setting' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.main {
+    color: $c-base;
+    font-family: $f-base;
+    letter-spacing: 1px;
+    --scale: 1;
+    --viewport-height: 100vh;
+
+    @include mq(pc) {
+        transform: scale(var(--scale));
+        transform-origin: top left;
+        width: calc(100vw / var(--scale));
+        height: var(--viewport-height);
+    }
+}
+
+p {
+    text-align: justify;
+}
+
+.container {
+    padding-inline: 10px;
+
+    @include mq(pc) {
+        max-width: 1126px;
+        margin-inline: auto;
+    }
+
+}
+
+.sp-br {
+    @include mq(pc) {
+        display: none;
+    }
+}
+
+.pc-br {
+    display: none;
+
+    @include mq(pc) {
+        display: block;
+    }
+}
