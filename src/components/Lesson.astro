@@ -1,0 +1,217 @@
+<div class="lesson">
+  <div class="wave top">
+    <img src="/assets/wave.svg" alt="" />
+  </div>
+  <div class="container">
+    <h2 class="lesson__ttl">
+      <span class="lesson__ttl--jp">レッスン内容</span>
+      <span class="lesson__ttl--en">LESSON</span>
+    </h2>
+    <p class="lesson__txt">
+      プロの講師陣が一人ひとりの成長をサポートし、<br />
+      「できた！」という達成感を<br />
+      大切にしながら、<br />
+      <span>着実にレベルアップ</span>していきます。<br />
+      ゲームが好きという気持ちを、<br />
+      確かな実力に変えるお手伝いをします。
+    </p>
+    <div class="point">
+      <div class="item-wrap">
+        <span class="num">
+          <img src="/assets/point01.svg" alt="" />
+        </span>
+        <div class="item">
+          <div class="item__thumb">
+            <img src="/assets/figure01.png" alt="" />
+          </div>
+          <div class="item-bottom">
+            <p class="item__lead">個人スキルの向上</p>
+            <p class="item__txt">
+              プロも実践する科学的なトレーニング方法で、正確で素早いエイムを身につけます。一人ひとりの癖や弱点を分析し、あなたに最適な練習メニューをカスタマイズ。毎回の成長が実感できるから、練習が楽しくなります。<br
+              />
+              各マップの特性、有利ポジションを把握し、常に最適な位置取りができるようになります。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item-wrap">
+        <span class="num">
+          <img src="/assets/point02.svg" alt="" />
+        </span>
+        <div class="item">
+          <div class="item__thumb">
+            <img src="/assets/figure02.png" alt="" />
+          </div>
+          <div class="item-bottom">
+            <p class="item__lead">チーム戦略・連携</p>
+            <p class="item__txt">
+              チーム戦で最も重要なのは情報共有。的確で素早い情報伝達、建設的な議論の仕方、チームの士気を高める声かけまで、プロチームで実際に使われているコミュニケーション術を学びます。<br
+              />
+              攻撃時、守備時、劣勢時など、様々なシチュエーションでの最適な連携パターンを実践的に身につけます。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item-wrap">
+        <span class="num">
+          <img src="/assets/point03.svg" alt="" />
+        </span>
+        <div class="item">
+          <div class="item__thumb">
+            <img src="/assets/figure03.png" alt="" />
+          </div>
+          <div class="item-bottom">
+            <p class="item__lead">礼儀マナー</p>
+            <p class="item__txt">
+              勝っても負けても相手をリスペクトする心を大切にします。「GG（Good
+              Game）」の挨拶から始まり、チームメイトへの感謝の気持ち、相手チームへの敬意など、Esportsの世界で必要なマナーをしっかりと身につけます。<br
+              />
+              練習や試合の時間をしっかり守ること、自分の役割に責任を持つことなど、一人の人間として必要な責任感を養います。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wave bottom">
+    <img src="/assets/wave02.svg" alt="" />
+  </div>
+</div>
+
+<style lang="scss">
+  @use '../style/mixin/setting' as *;
+  .lesson {
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 60px;
+    margin-top: 160px;
+    margin-bottom: 70px;
+    background-color: $c-green02;
+    &__ttl {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      width: 100%;
+      max-width: 350px;
+      height: 80px;
+      background-color: $c-white;
+      border-radius: 40px;
+      border: 4px solid $c-gray01;
+      margin-bottom: 20px;
+      &--jp {
+        font-size: 24px;
+        font-weight: $w-bold;
+        letter-spacing: 0.04em;
+      }
+      &--en {
+        color: $c-green01;
+        font-size: 16px;
+        font-family: $f-en;
+        font-weight: $w-bold;
+      }
+    }
+    &__txt {
+      font-size: 14px;
+      font-weight: $w-bold;
+      letter-spacing: 0.04em;
+      line-height: 2.2;
+      text-align: center;
+      margin-bottom: 60px;
+      span {
+        position: relative;
+        font-weight: bold;
+        z-index: 1;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          background: rgba(255, 235, 59, 0.8);
+          z-index: -1;
+        }
+      }
+    }
+  }
+  .point {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    .item-wrap {
+      position: relative;
+    }
+    .num {
+      position: absolute;
+      top: -13px;
+      left: -10px;
+      display: inline-block;
+      width: 66px;
+      height: auto;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .item {
+      background-color: $c-white;
+      border-radius: 20px;
+      overflow: hidden;
+      &__thumb {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 356 / 220;
+        img {
+          width: 110%;
+          height: 110%;
+          object-fit: cover;
+        }
+      }
+      &-bottom {
+        padding: 20px 20px 30px;
+      }
+      &__lead {
+        position: relative;
+        font-size: 18px;
+        font-weight: $w-bold;
+        padding-left: 14px;
+        margin-bottom: 12px;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          display: inline-block;
+          width: 6px;
+          height: 80%;
+          background-color: $c-orange01;
+        }
+      }
+      &__txt {
+        font-size: 14px;
+        font-weight: $w-regular;
+        letter-spacing: 0.04em;
+        line-height: 1.85;
+      }
+    }
+  }
+  .wave {
+    position: absolute;
+    height: auto;
+    width: 100%;
+
+    &.top {
+      transform: translateY(-100%);
+      aspect-ratio: 392 / 70;
+      top: 0;
+    }
+    &.bottom {
+      transform: translateY(100%);
+      aspect-ratio: 392 / 62;
+      bottom: 2px;
+    }
+  }
+</style>

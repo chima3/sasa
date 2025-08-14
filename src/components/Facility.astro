@@ -1,0 +1,65 @@
+---
+import SecTtl from '../components/SecTtl.astro';
+---
+
+<div class="container">
+  <SecTtl secTtl="設備紹介" en="FACILITY" />
+  <div class="swiper-container swiper-container1">
+    <div class="swiper swiper1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/assets/dummy02.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/assets/dummy02.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/assets/dummy02.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/assets/dummy02.png" alt="" />
+        </div>
+      </div>
+      <div class="swiper-pagination swiper-pagination1"></div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @use '../style/mixin/setting' as *;
+  .container {
+    padding-top: 40px;
+    padding-bottom: 300px;
+  }
+  .swiper-container {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+  }
+</style>
+<script>
+  import Swiper from 'swiper';
+  import 'swiper/css/bundle';
+  import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+
+  const swiper = new Swiper('.swiper1', {
+    modules: [Autoplay, Pagination, EffectFade],
+    loop: true,
+    speed: 1200, // ゆっくりとしたフェード
+
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
+    spaceBetween: 30,
+
+    autoplay: {
+      delay: 5000, // 少し長めの表示時間
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination1',
+      clickable: true,
+    },
+  });
+</script>

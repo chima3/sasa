@@ -1,60 +1,19 @@
-$f-base: YakuHanJP, "ZenKakuGothicNew-Regular", "Nunito", sans-serif;
-$f-light: YakuHanJP, "ZenKakuGothicNew-Light", "Nunito", sans-serif;
-$f-medium: YakuHanJP, "ZenKakuGothicNew-Medium", "Nunito", sans-serif;
-$f-bold: YakuHanJP, "ZenKakuGothicNew-Bold", "Nunito", sans-serif;
-$f-black: YakuHanJP, "ZenKakuGothicNew-Black", "Nunito", sans-serif;
-$f-en: YakuHanJP, "Nunito", sans-serif;
-
-@font-face {
-    font-family: "ZenKakuGothicNew-Regular";
-    font-display: swap;
-    src: url("/font/ZenKakuGothicNew-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "ZenKakuGothicNew-Light";
-    font-display: swap;
-    src: url("/font/ZenKakuGothicNew-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "ZenKakuGothicNew-Medium";
-    font-display: swap;
-    src: url("/font/ZenKakuGothicNew-Medium.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "ZenKakuGothicNew-Bold";
-    font-display: swap;
-    src: url("/font/ZenKakuGothicNew-Bold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "ZenKakuGothicNew-Black";
-    font-display: swap;
-    src: url("/font/ZenKakuGothicNew-Black.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Nunito";
-    font-display: swap;
-    src: url("/font/Nunito-VariableFont_wght.ttf") format("truetype");
-}
-
+$f-noto: YakuHanJP, 'Noto Sans JP', 'Nunito', sans-serif;
+$f-nunito: YakuHanJP, 'Nunito', 'Montserrat', sans-serif;
+$f-base: YakuHanJP, 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+$f-en: YakuHanJP, 'Quicksand', 'Nunito', sans-serif;
 
 $c-white: #fff;
-$c-white02: #FFFEF8;
+$c-white02: #fffef8;
 $c-base: #222222;
-$c-gray01: #888888;
-$c-gray02: #EFEFEF;
-$c-green01: #316745;
-$c-green02: #AACF53;
-$c-red01: #FFD1D1;
-$c-red02: #FF4343;
-$c-red03: #9F1111;
-$c-blue01: #B9D4FF;
-$c-blue02: #078CFF;
-$c-orange01: #FFC489;
+$c-gray01: #d9d9d9;
+$c-gray02: #efefef;
+$c-green01: #30b68f;
+$c-green02: #4dcea9;
+
+$c-blue01: #00bfff;
+
+$c-orange01: #f47830;
 
 //font-weight
 $w-regular: 400;
@@ -65,26 +24,26 @@ $w-black: 800;
 
 // 単位変換関数
 @function tovw($value, $value2) {
-    @return calc(($value / $value2) * 100vw);
+  @return calc(($value / $value2) * 100vw);
 }
 
 @function tovh($value, $value2) {
-    @return calc(($value / $value2) * 100vh);
+  @return calc(($value / $value2) * 100vh);
 }
 
 @function toper($value, $value2) {
-    @return calc(($value / $value2) * 100%);
+  @return calc(($value / $value2) * 100%);
 }
 
 @function toem($value, $value2) {
-    @return calc(($value / $value2) * 1em);
+  @return calc(($value / $value2) * 1em);
 }
 
 //hover
 @mixin hover() {
-    @media (hover: hover) and (pointer: fine) {
-        &:hover {
-            @content;
-        }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
     }
+  }
 }

@@ -2,56 +2,70 @@
 @use '../mixin/setting' as *;
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .main {
-    color: $c-base;
-    font-family: $f-base;
-    letter-spacing: 1px;
-    --scale: 1;
-    --viewport-height: 100vh;
-
-    @include mq(pc) {
-        transform: scale(var(--scale));
-        transform-origin: top left;
-        width: calc(100vw / var(--scale));
-        height: var(--viewport-height);
-    }
+  color: $c-base;
+  font-family: $f-base;
+  letter-spacing: 1px;
 }
 
 p {
-    text-align: justify;
+  text-align: justify;
 }
 
 .container {
-    padding-inline: 10px;
+  padding-inline: 20px;
 
-    @include mq(pc) {
-        max-width: 1126px;
-        margin-inline: auto;
-    }
-
+  @include mq(pc) {
+    max-width: 1126px;
+    margin-inline: auto;
+  }
 }
 
 .sp-br {
-    @include mq(pc) {
-        display: none;
-    }
+  @include mq(pc) {
+    display: none;
+  }
 }
 
 .pc-br {
-    display: none;
+  display: none;
 
-    @include mq(pc) {
-        display: block;
+  @include mq(pc) {
+    display: block;
+  }
+}
+
+.swiper1 {
+  .swiper-pagination {
+    position: initial;
+    display: flex;
+    gap: 4px;
+    margin-top: 15px;
+
+    .swiper-pagination-bullet {
+      width: calc(25% - 4px);
+      height: 4px;
+      background: $c-gray01;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+      opacity: 1;
+      --swiper-pagination-bullet-horizontal-gap: 0px;
+
+      &.swiper-pagination-bullet-active {
+        background: $c-orange01;
+        margin: 0;
+      }
     }
+  }
 }

@@ -2,26 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Main from '../layouts/Main.astro';
 import Mv from '../components/Mv.astro';
+import FixedBtn from '../components/FixedBtn.astro';
+import About from '../components/About.astro';
+import Lesson from '../components/Lesson.astro';
+import Facility from '../components/Facility.astro';
 ---
 
-<Layout title="ひのとよだ心のクリニック">
-	<Main>
-		<Mv></Mv>
-	</Main>
+<Layout title="">
+  <Main>
+    <FixedBtn />
+    <Mv />
+    <About />
+    <Lesson />
+    <Facility />
+  </Main>
 </Layout>
 
-
-<style lang="scss">
-	.bg-footer {
-		.bg-texture {
-			background-image: url(/assets/img/bg_green.webp);
-			z-index: 0;
-		}
-	}
-	.bg-texture {
-		position: relative;
-		background-image: url(/assets/img/bg_repeat.jpg);
-		background-repeat: repeat;
-		z-index: 1;
-	}
-</style>
+<style lang="scss"></style>

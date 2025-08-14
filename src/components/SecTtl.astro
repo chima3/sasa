@@ -1,0 +1,36 @@
+---
+export interface Props {
+  secTtl: string;
+  en: string;
+  className?: string;
+}
+
+const { secTtl, en, className = '' } = Astro.props;
+---
+
+<h2 class={`sec-ttl ${className}`}>
+  <span class="jp">{secTtl}</span>
+  <span class="en">{en}</span>
+</h2>
+
+<style lang="scss">
+  @use '../style/mixin/setting' as *;
+
+  .sec-ttl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 2px;
+    .jp {
+      font-size: 24px;
+      font-weight: $w-bold;
+      letter-spacing: 0.04em;
+    }
+    .en {
+      color: $c-green01;
+      font-size: 16px;
+      font-weight: $w-bold;
+    }
+  }
+</style>
