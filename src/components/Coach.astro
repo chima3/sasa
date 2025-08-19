@@ -1,0 +1,376 @@
+---
+import SecTtl from '../components/SecTtl.astro';
+---
+
+<div class="container">
+  <SecTtl secTtl="コーチ紹介" en="COACH" />
+  <div class="swiper-container swiper-container2">
+    <div class="swiper swiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="swiper-slide__thumb">
+            <img src="/assets/coach01.png" alt="" />
+          </div>
+          <p class="swiper-slide__name">山田 太郎</p>
+          <div class="swiper-slide-bottom">
+            <p class="swiper-slide__ttl">実績</p>
+            <ul class="list">
+              <li class="list__item">元プロチーム「EX-Rising」所属</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-slide__thumb">
+            <img src="/assets/coach01.png" alt="" />
+          </div>
+          <p class="swiper-slide__name">山田 太郎</p>
+          <div class="swiper-slide-bottom">
+            <p class="swiper-slide__ttl">実績</p>
+            <ul class="list">
+              <li class="list__item">元プロチーム「EX-Rising」所属</li>
+              <li class="list__item">ゲーム歴10年以上／FPS指導歴4年</li>
+              <li class="list__item">高校eスポーツ部への外部講師実績あり</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-slide__thumb">
+            <img src="/assets/coach01.png" alt="" />
+          </div>
+          <p class="swiper-slide__name">田中 花子</p>
+          <div class="swiper-slide-bottom">
+            <p class="swiper-slide__ttl">実績</p>
+            <ul class="list">
+              <li class="list__item">元プロチーム「APEX-Stars」所属</li>
+              <li class="list__item">ゲーム歴8年以上</li>
+              <li class="list__item">女性プレイヤー指導経験豊富</li>
+              <li class="list__item">大会優勝経験多数</li>
+              <li class="list__item">初心者から上級者まで幅広く対応</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- カスタムページネーション -->
+      <div class="custom-pagination">
+        <button class="pagination-btn prev-btn" disabled>
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="20" cy="20" r="20" fill="#F47830"></circle>
+            <path
+              d="M21.2067 27C21.4096 27 21.6128 26.9208 21.7676 26.7633C22.0775 26.4479 22.0775 25.9365 21.7673 25.6212L16.2443 20L21.7676 14.3786C22.0775 14.0632 22.0775 13.5521 21.7676 13.2368C21.4577 12.9211 20.9553 12.9211 20.6454 13.2368L14 20L20.6457 26.7636C20.8002 26.9208 21.0034 27 21.2067 27Z"
+              fill="white"></path>
+          </svg>
+        </button>
+        <button class="pagination-btn next-btn">
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="20" cy="20" r="20" fill="#F47830"></circle>
+            <path
+              d="M18.7933 27C18.5904 27 18.3872 26.9208 18.2324 26.7633C17.9225 26.4479 17.9225 25.9365 18.2327 25.6212L23.7557 20L18.2324 14.3786C17.9225 14.0632 17.9225 13.5521 18.2324 13.2368C18.5423 12.9211 19.0447 12.9211 19.3546 13.2368L26 20L19.3543 26.7636C19.1998 26.9208 18.9966 27 18.7933 27Z"
+              fill="white"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mountain-bg"></div>
+</div>
+
+<style lang="scss">
+  @use '../style/mixin/setting' as *;
+
+  .container {
+    padding-top: 40px;
+    padding-inline: 0;
+    padding-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .mountain-bg {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: linear-gradient(135deg, $c-green01 0%, $c-green01 50%, $c-green01 100%);
+    clip-path: polygon(
+      0% 100%,
+      0% 60%,
+      10% 50%,
+      20% 65%,
+      30% 45%,
+      40% 55%,
+      50% 35%,
+      60% 50%,
+      70% 30%,
+      80% 45%,
+      90% 25%,
+      100% 40%,
+      100% 100%
+    );
+    z-index: 0;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 40px;
+    z-index: 3;
+  }
+
+  .swiper {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    overflow: visible; // 隣の要素が見えるようにする
+  }
+
+  // Swiperラッパーの高さを統一
+  .swiper-wrapper {
+    align-items: stretch; // 全てのスライドを同じ高さにする
+  }
+
+  .swiper-slide {
+    position: relative;
+    width: calc(100% - 86px); // スライドの幅を調整して隣が見えるように
+    max-width: 500px;
+    opacity: 1; // 非アクティブなスライドを薄くする
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 4px 2px 15px 5px rgba(0, 0, 0, 0.1);
+    padding: 122px 20px 30px;
+    background-color: $c-white;
+
+    // 高さを統一する方法1: 固定の最小高さを設定
+    min-height: 335px;
+    max-height: 400px;
+
+    // 高さを統一する方法2: flexboxを使用
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    &__thumb {
+      position: absolute;
+      transform: translateX(-50%);
+      top: -30px;
+      left: 50%;
+      width: 130px;
+      height: 130px;
+      border: 4px solid $c-gray01;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &__name {
+      font-size: 20px;
+      font-weight: $w-bold;
+      text-align: center;
+      border-bottom: 1px solid $c-gray01;
+      padding-bottom: 30px;
+      margin-bottom: 24px;
+      flex-shrink: 0; // 名前部分のサイズを固定
+    }
+
+    &__ttl {
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      font-weight: $w-bold;
+      margin-bottom: 10px;
+      flex-shrink: 0; // タイトル部分のサイズを固定
+    }
+
+    // 下部のコンテンツエリア
+    .swiper-slide-bottom {
+      flex: 1; // 残りの空間を埋める
+      display: flex;
+      flex-direction: column;
+    }
+
+    .list {
+      display: flex;
+      flex-flow: column;
+      gap: 8px; // アイテム間のスペースを統一
+      flex: 1; // リストエリアを可変にする
+
+      &__item {
+        display: flex;
+        align-items: flex-start; // 長いテキストでも上揃えにする
+        gap: 4px;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        padding-left: 6px;
+        line-height: 1.5; // 行間を調整
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          background-color: $c-base;
+          border-radius: 50%;
+          margin-top: 0.6em; // テキストの上部に合わせて調整
+          flex-shrink: 0; // ドットのサイズを固定
+        }
+      }
+    }
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  // カスタムページネーション
+  .custom-pagination {
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+  }
+
+  .pagination-btn {
+    position: absolute;
+    top: 30%;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+    &.next-btn {
+      transform: translateX(-50%);
+      right: 0;
+      opacity: 1;
+    }
+    &.prev-btn {
+      transform: translateX(50%);
+      left: 0;
+      opacity: 1;
+    }
+
+    &:hover:not(:disabled) {
+      svg circle {
+        fill: #e66a2b; // ホバー時の色を少し濃くする
+      }
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+
+      svg circle {
+        fill: #ccc;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import 'swiper/css/bundle';
+
+  const swiper = new Swiper('.swiper2', {
+    loop: false,
+    speed: 600,
+    slidesPerView: 1.2,
+    centeredSlides: true,
+    spaceBetween: 20,
+
+    // 高さを統一するためのオプション
+    autoHeight: false, // これをfalseにして高さを固定
+
+    breakpoints: {
+      768: {
+        slidesPerView: 1.5,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 1.8,
+        spaceBetween: 40,
+      },
+    },
+
+    on: {
+      init: function () {
+        updatePaginationButtons(this);
+        // 初期化後に高さを統一する
+        equalizeSlideHeights();
+      },
+      slideChange: function () {
+        updatePaginationButtons(this);
+      },
+    },
+  });
+
+  // スライドの高さを統一する関数
+  function equalizeSlideHeights() {
+    const slides = document.querySelectorAll('.swiper-slide');
+    let maxHeight = 0;
+
+    // 最大の高さを取得
+    slides.forEach(slide => {
+      slide.style.height = 'auto'; // 一度リセット
+      const height = slide.offsetHeight;
+      if (height > maxHeight) {
+        maxHeight = height;
+      }
+    });
+
+    // 全てのスライドに最大の高さを適用
+    slides.forEach(slide => {
+      slide.style.height = `${maxHeight}px`;
+    });
+  }
+
+  // ページネーションボタンの状態を更新する関数
+  function updatePaginationButtons(swiperInstance) {
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (prevBtn && nextBtn) {
+      prevBtn.disabled = swiperInstance.isBeginning;
+      nextBtn.disabled = swiperInstance.isEnd;
+    }
+  }
+
+  // ページネーションボタンのクリックイベント
+  document.querySelector('.prev-btn')?.addEventListener('click', () => {
+    swiper.slidePrev();
+  });
+
+  document.querySelector('.next-btn')?.addEventListener('click', () => {
+    swiper.slideNext();
+  });
+
+  // ウィンドウリサイズ時に高さを再計算
+  window.addEventListener('resize', () => {
+    setTimeout(equalizeSlideHeights, 100);
+  });
+</script>
